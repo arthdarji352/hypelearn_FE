@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../axiosConfig";
 
 const CourseService = {
   getAllCourses: async ({ setAllCourses, setIsCourseLoading, onError }) => {
@@ -22,13 +22,13 @@ const CourseService = {
       .post(`/api/get_courses`, data)
       .then(({ data }) => {
         // console.log('course name ------------------', data)
-        return data
+        return data;
       })
       .catch((error) => {
-        console.error(error)
-        return error
-      })
-  }
+        console.error(error);
+        return error;
+      });
+  },
 };
 
 export default CourseService;
